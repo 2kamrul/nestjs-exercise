@@ -6,7 +6,7 @@ import { Repository } from "typeorm";
 
 @Injectable()
 export class EmployeeService {
-  constructor(@InjectRepository(EmployeeEntity) private employeeRepository: Repository<EmployeeEntity> ) {  }
+  constructor(@InjectRepository(EmployeeEntity) private employeeRepository: Repository<EmployeeEntity>) { }
   private readonly employees: CreateEmployeeDto[] = [];
 
   createEmployee(employeeEntity: EmployeeEntity) {
@@ -14,7 +14,13 @@ export class EmployeeService {
     return this.employeeRepository.save(newEmployee)
   }
 
-  getAll() : CreateEmployeeDto[] {
-      return this.employees
+  getSingleEmployee(id: number) {
+    return this.employeeRepository.findOneBy({
+      id: id
+    })
+  }
+
+  async getAll(): Promise<CreateEmployeeDto[]> {
+    return await this.employeeRepository.find()
   }
 }

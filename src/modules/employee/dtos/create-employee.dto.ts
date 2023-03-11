@@ -6,7 +6,7 @@ export class CreateEmployeeDto {
 
     @IsNotEmpty()
     username: string;
-    
+
     @IsNotEmpty()
     full_name: string;
 }

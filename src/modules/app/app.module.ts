@@ -9,13 +9,15 @@ import { EmployeeController } from "../employee/employee.controller";
 import { EmployeeService } from "../employee/employee.service";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import mySqlDataSource from "../../database/database.config";
+import { MeetingModule } from "../meeting/meeting.module";
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(mySqlDataSource),
 
     UserModule,
-    EmployeeModule
+    EmployeeModule,
+    MeetingModule
   ],
   controllers: [AppController],
   providers: [AppService]
