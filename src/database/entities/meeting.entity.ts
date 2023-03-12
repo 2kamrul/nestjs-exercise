@@ -1,5 +1,5 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { EmployeeEntity } from "./employee.entity";
+import { UserEntity } from "./user.entity";
 
 @Entity('meetings')
 export class MeetingEntity {
@@ -12,7 +12,7 @@ export class MeetingEntity {
     @Column()
     description: string;
 
-    @OneToOne(() => EmployeeEntity)
+    @OneToOne(() => UserEntity)
     @JoinColumn()
-    employee: EmployeeEntity;
+    employee: UserEntity;
 }

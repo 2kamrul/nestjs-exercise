@@ -1,7 +1,7 @@
 import { Body, Controller, Param, ParseIntPipe, Post } from "@nestjs/common";
 import { Get } from "@nestjs/common/decorators";
 import { MeetingEntity } from "src/database/entities/meeting.entity";
-import { EmployeeService } from "../employee/employee.service";
+import { UserService } from "../user/user.service";
 import { CreateMeetingDto } from "./dtos/create-meeting.dto";
 import { MeetingService } from "./meeting.service";
 

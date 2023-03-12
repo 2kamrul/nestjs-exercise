@@ -1,15 +1,17 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 const mySqlDataSource: DataSourceOptions = {
-    type: 'mysql',
+    type: 'oracle',
     host: 'localhost',
-    port: 3306,
+    sid: 'orcl',
+    port: 1521,
     username: 'root',
-    password: '',
+    password: '123456',
     database: 'nestjs-exercise',
     entities: [
         __dirname + '/entities/*{.ts,.js}'
     ],
     synchronize: true,
+    logging: false,
 }
 
 export default mySqlDataSource

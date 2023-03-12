@@ -1,5 +1,5 @@
 import { IsNotEmpty } from "class-validator";
-import { EmployeeEntity } from "src/database/entities/employee.entity";
+import { UserEntity } from "src/database/entities/user.entity";
 import { MeetingEntity } from "src/database/entities/meeting.entity";
 import { isNumberObject } from "util/types";
 
@@ -12,5 +12,5 @@ export class CreateMeetingDto {
     @IsNotEmpty()
     description: string;
 
-    employee: EmployeeEntity;
+    employee: UserEntity;
 }
