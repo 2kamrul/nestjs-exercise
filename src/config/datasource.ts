@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
-import mySqlDataSource from "./database.config";
+import oracleDbConfig from "./database.config";
 
-const AppDataSource = new DataSource(mySqlDataSource)
+const AppDataSource = new DataSource(oracleDbConfig)
 
 AppDataSource.initialize()
   .then(() => {

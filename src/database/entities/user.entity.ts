@@ -1,22 +1,21 @@
 import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { MeetingEntity } from "./meeting.entity";
 import { UserDetailsEntity } from "./user-details.entity";
 import { BlogEntity } from "./blog.entity";
 
-@Entity({ name: 'users' })
+@Entity({ name: 'USERS' })
 export class UserEntity {
     @PrimaryGeneratedColumn("increment")
-    id: number;
+    ID: number;
 
     @Column({ unique: true })
-    username: string;
+    USERNAME: string;
 
     @Column()
-    full_name: string;
+    FULL_NAME: string;
 
-    @OneToOne(() => UserDetailsEntity, userDetails => userDetails.user)
-    userDetails: UserDetailsEntity
+    @OneToOne(() => UserDetailsEntity, userDetails => userDetails.USER)
+    USER_DETAILS: UserDetailsEntity
 
-    @OneToMany(() => BlogEntity, blog => blog.user)
-    blogs: BlogEntity
+    @OneToMany(() => BlogEntity, blog => blog.USER)
+    BLOGS: BlogEntity
 }

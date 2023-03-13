@@ -10,7 +10,7 @@ export class BlogService {
   findAllBlogs() {
     return this.blogRepository.find({
       relations: {
-        user: true
+        USER: true
       }
     })
   }

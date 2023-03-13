@@ -4,13 +4,15 @@ import { UserService } from './user.service';
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { UserEntity } from "../../database/entities/user.entity";
 import { UserDetailsEntity } from "../../database/entities/user-details.entity";
+import { UserRepository } from "../../database/repositories/user.repository";
+import { UserDetailsRepository } from "../../database/repositories/user-details.repository";
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([UserEntity, UserDetailsEntity])
   ],
   controllers: [UserController],
-  providers: [UserService],
+  providers: [UserService, UserRepository, UserDetailsRepository],
   /**
    * @hint For accessing one service into another service
    * Ex : Here meeting service need user service

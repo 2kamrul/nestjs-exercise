@@ -4,15 +4,15 @@ import { UserDetailsEntity } from "../../../database/entities/user-details.entit
 import { BlogEntity } from "../../../database/entities/blog.entity";
 
 export class CreateUserDto {
-    id: number
+    ID: number
 
     @IsNotEmpty()
-    username: string;
+    USERNAME: string;
 
     @IsNotEmpty()
-    full_name: string;
+    FULL_NAME: string;
 
-    userDetails: UserDetailsEntity
+    USER_DETAILS: UserDetailsEntity
 
-    blogs: BlogEntity
+    BLOGS: BlogEntity
 }

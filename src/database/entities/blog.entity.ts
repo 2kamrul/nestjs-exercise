@@ -1,18 +1,18 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { UserEntity } from "./user.entity";
 
-@Entity('blogs')
+@Entity('BLOGS')
 export class BlogEntity{
   @PrimaryGeneratedColumn('increment')
-  id: number;
+  ID: number;
 
   @Column()
-  title: string;
+  TITLE: string;
 
   @Column()
-  desc: string;
+  DESC: string;
 
-  @ManyToOne(() => UserEntity, user => user.blogs)
+  @ManyToOne(() => UserEntity, user => user.BLOGS)
   @JoinColumn()
-  user : UserEntity[]
+  USER : UserEntity[]
 }
