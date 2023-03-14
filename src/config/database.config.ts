@@ -13,15 +13,13 @@ const oracleDbConfig: OracleConnectionOptions = {
     username: 'root',
     password: '123456',
     database: 'nestjs-exercise',
-    entities: [
-        sourcePath + 'database/entities/*{.ts,.js}'
-    ],
+    entities: [ sourcePath + 'database/entities/*{.ts,.js}' ],
     extra: {
-        seeds: [
-          sourcePath + 'database/seeds/**/*{.ts,.js}'
-        ],
-        // seeds: [UserSeed],
+        seeds: [ sourcePath + 'database/seeds/**/*{.ts,.js}' ],
+        // factories: [sourcePath + '/database/factories/**/*{.ts,.js}'], // For auto generating using faker library
     },
+    migrations: [ sourcePath + 'database/migrations/**/*{.ts,.js}' ],
+    migrationsTableName: "MIGRATIONS",
     synchronize: true,
     logging: false,
 }
